@@ -9,9 +9,10 @@
     height: 500px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;  border-style: solid;
-    border-width: 20px;
-    border-image: linear-gradient(to top, rgb(122, 32, 32) 1%, rgb(3, 179, 3)) 0 0 100% 0/30px 0 stretch;
+    overflow: hidden;  
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to top, rgb(122, 32, 32) 1%, rgb(3, 179, 3)) 0 0 100% /30px 0 stretch;
     border-left: 0px;
     border-right: 0px;
     background: linear-gradient(rgb(96, 96, 226), white);
@@ -38,6 +39,30 @@
     width: 500px;
     position: absolute;
     animation: animacao-nuvem 10s infinite linear;
+}
+
+.btn-music{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-sound{
+    position: absolute;
+    right: 55px;
+    bottom: 10px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.svg-sound{
+    width: 30px;
+}
+
+.music-note{
+    width: 30px;
 }
 
 @keyframes animacao-tubo {

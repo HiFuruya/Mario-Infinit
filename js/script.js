@@ -1,7 +1,14 @@
 const mario = document.querySelector('.mario');
 const tubo = document.querySelector('.tubo');
+const music = document.querySelector('.music');
+const buttonMusic = document.querySelector('.btn-music');
+const buttonSound = document.querySelector('.btn-sound');
+const musicNote = document.querySelector('.music-note');
+const svgSound = document.querySelector('.svg-sound');
+const somPulo = document.querySelector('.som-pulo');
 
 const pulo = () =>{
+    somPulo.play();
     mario.classList.add('pulo');
 
     setTimeout(() => {
@@ -32,3 +39,33 @@ const loop = setInterval(()=> {
         clearInterval(loop);
     }
 }, 10);
+
+buttonMusic.addEventListener('click', () => {
+
+    if (music.src != 'http://127.0.0.1:5500/music/Overworld%20Theme%20-%20Super%20Mario%20World.mp3') {
+        music.src = 'music/Overworld Theme - Super Mario World.mp3';
+        music.play();
+        buttonMusic.disabled = true;
+        buttonMusic.disabled = false;
+        musicNote.src = 'svg/music-note-beamed.svg';
+    }else{
+        music.src = '#';
+        musicNote.src = 'svg/music-off-icon.svg';
+    }
+});
+
+buttonSound.addEventListener('click', () => {
+
+    console.log(somPulo.src);
+    if (somPulo.src == 'http://127.0.0.1:5500/music/Super%20Mario%20-%20Som%20do%20pulo%20do%20M%C3%A1rio.mp3') {
+        somPulo.src = '#';
+        buttonSound.disabled = true;
+        buttonSound.disabled = false;
+        svgSound.src = 'svg/volume-mute.svg';
+    }else{
+        buttonSound.disabled = true;
+        buttonSound.disabled = false;
+        somPulo.src = 'music/Super Mario - Som do pulo do Mário.mp3';
+        svgSound.src = 'svg/volume-up.svg';
+    }
+});
