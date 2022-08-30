@@ -16,7 +16,9 @@ const musicNote = document.querySelector('.music-note');
 const svgSound = document.querySelector('.svg-sound');
 
 const pulo = () =>{
-    somPulo.play();
+    if (!somPulo.src.includes("#")) {
+        somPulo.play();
+    }
     mario.classList.add('pulo');
 
     setTimeout(() => {
@@ -44,7 +46,7 @@ const loop = setInterval(()=> {
         mario.style.width = '80px';
         mario.style.marginLeft = '50px';
 
-        if (music.src == 'http://127.0.0.1:5500/music/Overworld%20Theme%20-%20Super%20Mario%20World.mp3') {
+        if (!music.src.includes('#')) {
             music.src = '#'
             gameOver.play();
         }
@@ -55,7 +57,7 @@ const loop = setInterval(()=> {
 
 buttonMusic.addEventListener('click', () => {
 
-    if (music.src != 'http://127.0.0.1:5500/music/Overworld%20Theme%20-%20Super%20Mario%20World.mp3') {
+    if (music.src.includes('#')) {
         music.src = 'music/Overworld Theme - Super Mario World.mp3';
         music.play();
         buttonMusic.disabled = true;
@@ -69,7 +71,7 @@ buttonMusic.addEventListener('click', () => {
 
 buttonSound.addEventListener('click', () => {
 
-    if (somPulo.src == 'http://127.0.0.1:5500/music/Super%20Mario%20-%20Som%20do%20pulo%20do%20M%C3%A1rio.mp3') {
+    if (!somPulo.src.includes('#')) {
         somPulo.src = '#';
         buttonSound.disabled = true;
         buttonSound.disabled = false;
